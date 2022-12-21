@@ -21,8 +21,8 @@ function App() {
         <Input setTodos={setTodos} />
 
         {/* Todo 관련된 것 */}
-        <TodoList todos={todos} isActive={true} />
-        <TodoList todos={todos} isActive={false} />
+        <TodoList todos={todos} isActive={true} setTodos={setTodos} />
+        <TodoList todos={todos} isActive={false} setTodos={setTodos} />
       </main>
       <footer>푸터입니다.</footer>
     </div>

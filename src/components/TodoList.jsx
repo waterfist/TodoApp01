@@ -1,7 +1,8 @@
 import React from "react";
+import Todo from "./Todo";
 
 // Props로 todos와 isActive를 가져옴.
-const TodoList = ({ todos, isActive }) => {
+const TodoList = ({ todos, isActive, setTodos }) => {
   return (
     <>
       {/* 해석: isActive라면 "할 일"이다. 그게 아니라면 "완료"이다. */}
@@ -13,20 +14,7 @@ const TodoList = ({ todos, isActive }) => {
       {todos
         .filter((item) => item.isDone === !isActive)
         .map((item) => {
-          return (
-            <div
-              style={{
-                border: "1px solid black",
-              }}
-              key={item.id}
-            >
-              <h5>{item.title}</h5>
-              <p>{item.contents}</p>
-              {/* 해석: isActive라면 완료이다. 그게 아니라면 취소이다. */}
-              <button>{isActive ? "완료" : "취소"}</button>
-              <button>삭제</button>
-            </div>
-          );
+          return <Todo item={item} isActive={isActive} setTodos={setTodos} />;
         })}
     </>
   );
