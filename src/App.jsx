@@ -18,7 +18,7 @@ function App() {
         }}
       >
         {/* input 관련된 것 */}
-        <Input />
+        <Input setTodos={setTodos} />
 
         {/* Todo 관련된 것 */}
         <TodoList todos={todos} isActive={true} />

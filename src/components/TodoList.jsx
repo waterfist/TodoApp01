@@ -8,6 +8,7 @@ const TodoList = ({ todos, isActive }) => {
       <h4>{isActive ? "할 일" : "완료"}</h4>
       {/* filter를 통해 isDone을 골라서 보여줌. 
         해석: item중에 isDone이 isActive가 아닌 것만 나와주세요.
+        isDone = !isActive 
         map 함수를 통해서 전체를 출력함. 19분08초 */}
       {todos
         .filter((item) => item.isDone === !isActive)
